@@ -1,0 +1,49 @@
+﻿<mah:MetroWindow x:Class="GoogleBooksClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoogleBooksClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+    <mah:MetroWindow.Resources>
+        <Storyboard x:Key="OnMouseMove1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="button">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="21.404"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-16.487"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="button">
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FF2F2F2F"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFD62F2F"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </mah:MetroWindow.Resources>
+    <mah:MetroWindow.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseMove" SourceName="button">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseMove1}"/>
+        </EventTrigger>
+    </mah:MetroWindow.Triggers>
+    <DockPanel>
+        <WrapPanel DockPanel.Dock="Top">
+            <Label>Suche</Label>
+            <TextBox Text="Hund" Name="tb1" Width="200"></TextBox>
+            <Button x:Name="button" Click="Suchen" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform> Los!
+            </Button>
+
+            <Button Click="ExportXml">Export XML</Button>
+            <Button Click="ImportXml">Import XML</Button>
+            <Button Click="ExportExcel">Export Excel</Button>
+        </WrapPanel>
+
+        <DataGrid Name="myGrid" />
+    </DockPanel>
+</mah:MetroWindow>
