@@ -81,12 +81,16 @@ namespace GoogleBooksClient
                     ws = pack.Workbook.Worksheets.Add("Books");
 
 
-                var pCount = ws.Cells["B3:B10"].Sum(x => int.Parse(x.Value.ToString()));
+                //var pCount = ws.Cells["B3:B10"].Sum(x => int.Parse(x.Value.ToString()));
 
-                MessageBox.Show(pCount.ToString());
-                return;
+                //MessageBox.Show(pCount.ToString());
+                //return;
                 ws.Cells[1, 1].Value = "Bücher";
                 ws.Cells["A2"].Value = $"Anzahl: {data.Count}";
+
+                //linq-to-excel
+                var result = ws.Cells[1, 100].Where(x => x.Value.ToString().StartsWith("Hund"));
+
 
                 int row = 3;
                 foreach (var item in data)
@@ -102,6 +106,42 @@ namespace GoogleBooksClient
                 pack.Save();
             }
             Process.Start(fi.FullName);
+        }
+
+        private void FilterBücher(object sender, RoutedEventArgs e)
+        {
+            List<Volumeinfo> data = (List<Volumeinfo>)myGrid.ItemsSource;
+
+            var query = from vi in data
+                        where vi.title.Contains("b")
+                        orderby vi.ratingsCount, vi.pageCount descending
+                        select vi;
+
+
+            myGrid.ItemsSource = query.ToList();
+        }
+
+        private void FilterBücherLamba(object sender, RoutedEventArgs e)
+        {
+            List<Volumeinfo> data = (List<Volumeinfo>)myGrid.ItemsSource;
+
+            myGrid.ItemsSource = data.Where(vi => vi.title.Contains("b"))
+                                     .OrderBy(x => x.ratingsCount)
+                                     .ThenByDescending(x => x.pageCount)
+                                     .ToList();
+        }
+
+        private void LinqZeug(object sender, RoutedEventArgs e)
+        {
+            List<Volumeinfo> data = (List<Volumeinfo>)myGrid.ItemsSource;
+
+            //anzahl bücher mit mehr als 100 seiten
+            int count = data.Count(x => x.pageCount > 100);
+
+            //erste buch mit hund
+            var vi = data.FirstOrDefault(x => x.title.ToLower().Contains("hund"));
+            if (vi != null)
+                MessageBox.Show(vi.title);
         }
     }
 }

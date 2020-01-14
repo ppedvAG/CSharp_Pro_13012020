@@ -42,6 +42,9 @@ xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
             <Button Click="ExportXml">Export XML</Button>
             <Button Click="ImportXml">Import XML</Button>
             <Button Click="ExportExcel">Export Excel</Button>
+            <Button Click="FilterBücher">Nur Bücher mit mehr als 100 Seiten und einem 'b' im titel</Button>
+            <Button Click="FilterBücherLamba" Content="Nur Bücher mit mehr als 100 Seiten und einem 'b' im titel ALS LAMBDA"/>
+            <Button Click="LinqZeug" Content="linq Zeug"/>
         </WrapPanel>
 
         <DataGrid Name="myGrid" />
