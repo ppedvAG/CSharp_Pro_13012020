@@ -19,6 +19,8 @@ namespace GoogleBooksClient
         public MainWindow()
         {
             InitializeComponent();
+
+          //  this.Activated += (s, e) => MessageBox.Show("Nerv!");
         }
 
         private void Suchen(object sender, RoutedEventArgs e)
