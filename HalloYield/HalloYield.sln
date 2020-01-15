@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloYield", "HalloYield\HalloYield.csproj", "{27DB8DBD-4E31-4625-AE1F-373D5C5D5FDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27DB8DBD-4E31-4625-AE1F-373D5C5D5FDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27DB8DBD-4E31-4625-AE1F-373D5C5D5FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27DB8DBD-4E31-4625-AE1F-373D5C5D5FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27DB8DBD-4E31-4625-AE1F-373D5C5D5FDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EFF704DF-F5E8-4A61-AC64-4EF2C7CC6357}
+	EndGlobalSection
+EndGlobal
