@@ -29,26 +29,26 @@ namespace CMD_Fun
             proc.Start();
 
 
-            //var writer = proc.StandardInput;
-            //writer.WriteLine("ping");
-            //writer.Flush();
-            //writer.Close();
 
-            //StreamReader reader = proc.StandardOutput;
-            //string output = reader.ReadToEnd();
-            //listBox1.Items.Add(output);
+            // Start the asynchronous read of the sort output stream.
+
+            proc.OutputDataReceived += Proc_OutputDataReceived;
+            proc.BeginOutputReadLine();
+            //while (!proc.HasExited)
+            //{
+            //    Application.DoEvents(); // This keeps your form responsive by processing events
+            //}
+        }
+
+        private void Proc_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            listBox1.Invoke((MethodInvoker)delegate { listBox1.Items.Add(e.Data); });
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            StreamReader reader = proc.StandardOutput;
             var writer = proc.StandardInput;
-            writer.WriteLine("ping");
-            //writer.Flush();
-            //writer.Close();
-
-            string output = reader.ReadToEnd();
-            listBox1.Items.Add(output);
+            writer.WriteLine("ping google.de /t");
         }
     }
 }
