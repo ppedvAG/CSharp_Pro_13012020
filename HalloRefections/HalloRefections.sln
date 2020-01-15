@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloRefections", "HalloRefections\HalloRefections.csproj", "{AC1B4A4E-6AEE-4F03-9679-B63BD4699942}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachtZeug", "MachtZeug\MachtZeug.csproj", "{3AF38F6C-C8DD-4F74-A9C9-5403A16557B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC1B4A4E-6AEE-4F03-9679-B63BD4699942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC1B4A4E-6AEE-4F03-9679-B63BD4699942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC1B4A4E-6AEE-4F03-9679-B63BD4699942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC1B4A4E-6AEE-4F03-9679-B63BD4699942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AF38F6C-C8DD-4F74-A9C9-5403A16557B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AF38F6C-C8DD-4F74-A9C9-5403A16557B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AF38F6C-C8DD-4F74-A9C9-5403A16557B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AF38F6C-C8DD-4F74-A9C9-5403A16557B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6185D98-CE57-4F93-A122-A9014D5EF538}
+	EndGlobalSection
+EndGlobal

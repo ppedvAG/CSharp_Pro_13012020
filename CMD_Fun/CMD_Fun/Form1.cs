@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MeineErweiterungsmethoden;
 
 namespace CMD_Fun
 {
@@ -27,7 +28,6 @@ namespace CMD_Fun
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.RedirectStandardInput = true;
             proc.Start();
-
 
 
             // Start the asynchronous read of the sort output stream.
@@ -49,6 +49,22 @@ namespace CMD_Fun
         {
             var writer = proc.StandardInput;
             writer.WriteLine("ping google.de /t");
+
+
+            //Erweiterungsmethode geht nur weil der Namespace  MeineErweiterungsmethoden
+            DateTime.Now.GetKW();
+        }
+    }
+
+}
+
+namespace MeineErweiterungsmethoden
+{
+    public static class DateEx
+    {
+        public static int GetKW(this DateTime dt)
+        {
+            return 2;
         }
     }
 }
